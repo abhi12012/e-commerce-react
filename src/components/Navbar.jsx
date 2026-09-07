@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-function Navbar() {
+
+
+function Navbar({ cartCount }) {
   return (
    <nav className="navbar">
 
@@ -17,7 +19,7 @@ function Navbar() {
   </li>
 
   <li>
-    <a href="#">Cart</a>
+    <a href="#">Cart ({cartCount})</a>
   </li>
 </ul>
 

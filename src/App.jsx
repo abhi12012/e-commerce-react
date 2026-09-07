@@ -61,8 +61,7 @@ const addToCart = (product) => {
 
   return (
   <>
-    <Navbar />
-
+    <Navbar cartCount={cart.length} />
 
 
     <div>
