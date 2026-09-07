@@ -3,10 +3,20 @@
   justify-content: space-between;
   align-items: center;
   background-color: #222;
+  padding: 15px 30px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
+}
+
+.navbar h2,
+.navbar li {
+  color: white;
+}
+
+.navbar li {
+  cursor: pointer;
 }
