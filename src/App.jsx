@@ -4,37 +4,63 @@ import Hero from './components/Hero'
 import products from './data/products'
 import ProductCard from './components/ProductCard'
 import ProductDetails from './components/ProductDetails'
+import { Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
   
 
   return (
-    <>
-      <Navbar />
+  <>
+    <Navbar />
 
-<main>
-   
-  <Hero />
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <main>
+            <Hero />
 
- <ProductDetails product={products[0]} />
+            <ProductDetails product={products[0]} />
 
-  <h2>Our Products</h2>
- 
-<div className="products">
-  {products.map((product) => {
-    return (
-      <ProductCard
-        key={product.id}
-        product={product}
+            <h2>Our Products</h2>
+
+            <div className="products">
+              {products.map((product) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                  />
+                )
+              })}
+            </div>
+          </main>
+        }
       />
-    )
-  })}
-</div>
 
+      <Route
+        path="/products"
+        element={
+          <main>
+            <h2>Our Products</h2>
 
-</main>
-    </>
-
-  )
+            <div className="products">
+              {products.map((product) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                  />
+                )
+              })}
+            </div>
+          </main>
+        }
+      />
+    </Routes>
+  </>
+)
 }
 export default App
