@@ -10,7 +10,10 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
+
 
 .navbar h2,
 .navbar li {
@@ -19,4 +22,8 @@
 
 .navbar li {
   cursor: pointer;
+}
+
+.navbar li:hover {
+  color: orange;
 }
