@@ -15,10 +15,17 @@ const [search, setSearch] = useState("")
 const [category, setCategory] = useState("All")
 
 
-const filteredProducts = products.filter((product) =>
-  product.name.toLowerCase().includes(search.toLowerCase()) ||
-  product.category.toLowerCase().includes(search.toLowerCase())
-)
+const filteredProducts = products.filter((product) => {
+  const matchesSearch =
+    product.name.toLowerCase().includes(search.toLowerCase()) ||
+    product.category.toLowerCase().includes(search.toLowerCase())
+
+  const matchesCategory =
+    category === "All" || product.category === category
+
+  return matchesSearch && matchesCategory
+})
+
 
   return (
   <>
