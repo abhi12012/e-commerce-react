@@ -8,6 +8,9 @@ function ProductDetails() {
   (product) => product.id === Number(id)
 )
 
+if (!selectedProduct) {
+  return <h2>Product Not Found</h2>
+}
     
   return (
     <div className="product-details">
@@ -15,6 +18,8 @@ function ProductDetails() {
 
       <p>Price: ₹{selectedProduct.price}</p>
       <p>Category: {selectedProduct.category}</p>
+
+      
 
       <button>Add to Cart</button>
     </div>
