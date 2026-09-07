@@ -15,14 +15,16 @@ function App() {
    
   <Hero />
  
-{products.map((product) => {
-  return (
-    <ProductCard
-      key={product.id}
-      product={product}
-    />
-  )
-})}
+<div className="products">
+  {products.map((product) => {
+    return (
+      <ProductCard
+        key={product.id}
+        product={product}
+      />
+    )
+  })}
+</div>
 
 
 </main>

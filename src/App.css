@@ -57,8 +57,18 @@
 }
 
 
+
+
+
 .product-card {
   border: 1px solid #ddd;
   padding: 20px;
   margin: 20px;
+  width: 200px;
+}
+
+
+.products {
+  display: flex;
+  gap: 20px;
 }
