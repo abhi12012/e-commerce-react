@@ -65,10 +65,19 @@
   padding: 20px;
   margin: 20px;
   width: 200px;
+
 }
 
 
 .products {
   display: flex;
   gap: 20px;
+}
+
+.product-card h3 {
+  margin: 0 0 10px;
+}
+
+.product-card p {
+  margin: 5px 0;
 }
