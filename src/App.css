@@ -2,4 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #222;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
