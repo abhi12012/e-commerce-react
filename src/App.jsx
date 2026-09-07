@@ -1,8 +1,14 @@
 import Navbar from './components/Navbar'
 import './App.css'
 import Hero from './components/Hero'
+import products from './data/products'
 
 function App() {
+  console.log(products)
+
+  products.map((product) => {
+  console.log(product.name)
+})
   return (
     <>
       <Navbar />
@@ -11,7 +17,7 @@ function App() {
   <Hero />
 </main>
     </>
-    
+
   )
 }
 export default App
