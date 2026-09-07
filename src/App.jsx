@@ -15,7 +15,9 @@ function App() {
    
   <Hero />
  
-<ProductCard product={products[0]} />
+{products.map((product) => {
+  return <ProductCard product={product} />
+})}
 
 </main>
     </>
