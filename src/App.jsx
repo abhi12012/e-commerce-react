@@ -14,6 +14,8 @@ function App() {
 <main>
    
   <Hero />
+
+  <h2>Our Products</h2>
  
 <div className="products">
   {products.map((product) => {
