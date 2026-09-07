@@ -4,7 +4,9 @@
   align-items: center;
   background-color: #222;
   padding: 15px 30px;
+  border-bottom: 1px solid #444;
 }
+
 
 .navbar ul {
   list-style: none;
