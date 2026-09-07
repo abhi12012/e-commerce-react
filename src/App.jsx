@@ -14,6 +14,9 @@ function App() {
 const [search, setSearch] = useState("")
 const [category, setCategory] = useState("All")
 const [sort, setSort] = useState("default")
+const [cart, setCart] = useState([])
+
+
 
 
 const filteredProducts = products.filter((product) => {
@@ -38,14 +41,40 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
     return b.price - a.price
   }
 
+
   return 0
 })
+
+
+const addToCart = (product) => {
+  setCart([...cart, product])
+}
+
+
+
+
+
+
+
 
 
 
   return (
   <>
     <Navbar />
+
+
+
+    <div>
+  <h2>Cart</h2>
+
+  {cart.map((product) => (
+    <p key={product.id}>{product.name}</p>
+  ))}
+</div>
+
+
+
 
     <Routes>
       <Route
@@ -101,9 +130,10 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
     sortedProducts.map((product) => {
       return (
         <ProductCard
-          key={product.id}
-          product={product}
-        />
+  key={product.id}
+  product={product}
+  addToCart={addToCart}
+/>
       )
     })
   )}
