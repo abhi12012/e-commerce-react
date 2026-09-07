@@ -13,6 +13,7 @@ function App() {
   
 const [search, setSearch] = useState("")
 const [category, setCategory] = useState("All")
+const [sort, setSort] = useState("default")
 
 
 const filteredProducts = products.filter((product) => {
@@ -25,6 +26,21 @@ const filteredProducts = products.filter((product) => {
 
   return matchesSearch && matchesCategory
 })
+
+
+
+const sortedProducts = [...filteredProducts].sort((a, b) => {
+  if (sort === "low") {
+    return a.price - b.price
+  }
+
+  if (sort === "high") {
+    return b.price - a.price
+  }
+
+  return 0
+})
+
 
 
   return (
@@ -61,13 +77,28 @@ const filteredProducts = products.filter((product) => {
 </select>
 
 
+
+<select
+  value={sort}
+  onChange={(event) => setSort(event.target.value)}
+>
+  <option value="default">Sort By</option>
+  <option value="low">Price: Low → High</option>
+  <option value="high">Price: High → Low</option>
+</select>
+
+
+
+
+
+
             <h2>Our Products</h2>
 
             <div className="products">
   {filteredProducts.length === 0 ? (
     <p>No products found</p>
   ) : (
-    filteredProducts.map((product) => {
+    sortedProducts.map((product) => {
       return (
         <ProductCard
           key={product.id}
