@@ -1,8 +1,10 @@
 function Hero() {
   return (
-    <section>
-      <h1>Welcome to E-commerce</h1>
-      <p>Find the products you love.</p>
+
+    <section className="hero">
+
+      <h1 className="hero-title">Welcome to E-commerce</h1>
+      <p className="hero-text">Find the products you love.</p>
     </section>
   )
 }
