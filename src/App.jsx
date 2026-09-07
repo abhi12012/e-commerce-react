@@ -12,7 +12,7 @@ import { useState } from 'react'
 function App() {
   
 const [search, setSearch] = useState("")
-
+const [category, setCategory] = useState("All")
 
 
 const filteredProducts = products.filter((product) =>
@@ -41,6 +41,17 @@ const filteredProducts = products.filter((product) =>
   onChange={(event) => setSearch(event.target.value)}
 />
 
+
+
+<select
+  value={category}
+  onChange={(event) => setCategory(event.target.value)}
+>
+  <option value="All">All Categories</option>
+  <option value="Clothing">Clothing</option>
+  <option value="Footwear">Footwear</option>
+  <option value="Electronics">Electronics</option>
+</select>
 
 
             <h2>Our Products</h2>
