@@ -5,11 +5,20 @@ import products from './data/products'
 import ProductCard from './components/ProductCard'
 import ProductDetails from './components/ProductDetails'
 import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 
 
 function App() {
   
+const [search, setSearch] = useState("")
+
+
+
+const filteredProducts = products.filter((product) =>
+  product.name.toLowerCase().includes(search.toLowerCase())
+
+)
 
   return (
   <>
@@ -24,10 +33,20 @@ function App() {
 
            
 
+
+           <input
+  type="text"
+  placeholder="Search products..."
+  value={search}
+  onChange={(event) => setSearch(event.target.value)}
+/>
+
+
+
             <h2>Our Products</h2>
 
             <div className="products">
-              {products.map((product) => {
+              {filteredProducts.map((product) => {
                 return (
                   <ProductCard
                     key={product.id}
