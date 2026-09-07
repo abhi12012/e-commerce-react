@@ -9,12 +9,16 @@ function App() {
   products.map((product) => {
   console.log(product.name)
 })
+
   return (
     <>
       <Navbar />
 
 <main>
   <Hero />
+  {products.map((product) => {
+  return <p>{product.name}</p>
+})}
 </main>
     </>
 
