@@ -3,6 +3,7 @@ import './App.css'
 import Hero from './components/Hero'
 import products from './data/products'
 import ProductCard from './components/ProductCard'
+import ProductDetails from './components/ProductDetails'
 
 function App() {
   
@@ -14,6 +15,8 @@ function App() {
 <main>
    
   <Hero />
+
+ <ProductDetails product={products[0]} />
 
   <h2>Our Products</h2>
  
