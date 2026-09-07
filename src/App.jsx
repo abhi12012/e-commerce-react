@@ -22,7 +22,7 @@ function App() {
           <main>
             <Hero />
 
-            <ProductDetails product={products[0]} />
+           
 
             <h2>Our Products</h2>
 
@@ -39,6 +39,8 @@ function App() {
           </main>
         }
       />
+
+
 
       <Route
         path="/products"
@@ -57,8 +59,25 @@ function App() {
               })}
             </div>
           </main>
+
+
+
         }
+
+
+
       />
+
+
+
+      <Route
+  path="/products/:id"
+  element={
+    <ProductDetails product={products[0]} />
+  }
+/>
+
+
     </Routes>
   </>
 )
