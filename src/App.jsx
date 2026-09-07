@@ -16,8 +16,8 @@ const [search, setSearch] = useState("")
 
 
 const filteredProducts = products.filter((product) =>
-  product.name.toLowerCase().includes(search.toLowerCase())
-
+  product.name.toLowerCase().includes(search.toLowerCase()) ||
+  product.category.toLowerCase().includes(search.toLowerCase())
 )
 
   return (
@@ -46,15 +46,19 @@ const filteredProducts = products.filter((product) =>
             <h2>Our Products</h2>
 
             <div className="products">
-              {filteredProducts.map((product) => {
-                return (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                  />
-                )
-              })}
-            </div>
+  {filteredProducts.length === 0 ? (
+    <p>No products found</p>
+  ) : (
+    filteredProducts.map((product) => {
+      return (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      )
+    })
+  )}
+</div>
           </main>
         }
       />
