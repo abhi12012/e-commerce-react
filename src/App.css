@@ -27,3 +27,7 @@
 .navbar li:hover {
   color: orange;
 }
+
+.navbar h2 {
+  margin: 0;
+}

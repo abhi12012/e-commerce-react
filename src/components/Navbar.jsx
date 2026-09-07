@@ -1,14 +1,25 @@
 function Navbar() {
   return (
    <nav className="navbar">
-    
+
       <h2>E-commerce</h2>
 
-      <ul>
-        <li>Home</li>
-        <li>Products</li>
-        <li>Cart</li>
-      </ul>
+
+
+<ul>
+  <li>
+    <a href="#">Home</a>
+  </li>
+
+  <li>
+    <a href="#">Products</a>
+  </li>
+
+  <li>
+    <a href="#">Cart</a>
+  </li>
+</ul>
+
     </nav>
   )
 }
