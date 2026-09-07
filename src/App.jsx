@@ -70,11 +70,9 @@ function App() {
 
 
 
-      <Route
+     <Route
   path="/products/:id"
-  element={
-    <ProductDetails product={products[0]} />
-  }
+  element={<ProductDetails />}
 />
 
 
