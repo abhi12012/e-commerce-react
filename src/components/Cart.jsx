@@ -14,9 +14,24 @@ function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
         <>
           {cart.map((item) => (
             <div key={item.product.id}>
+
+
               <p>
-                {item.product.name} × {item.quantity}
-              </p>
+  {item.product.name}
+</p>
+
+<p>
+  Price: ₹{item.product.price}
+</p>
+
+<p>
+  Quantity: {item.quantity}
+</p>
+
+<p>
+  Subtotal: ₹{item.product.price * item.quantity}
+</p>
+
 
               <button onClick={() => increaseQuantity(item.product.id)}>
                 +

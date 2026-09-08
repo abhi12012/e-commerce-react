@@ -107,9 +107,19 @@ const removeFromCart = (productId) => {
 
 
 
+
+
+const cartCount = cart.reduce(
+  (total, item) => total + item.quantity,
+  0
+)
+
+
+
+
   return (
   <>
-    <Navbar cartCount={cart.length} />
+   <Navbar cartCount={cartCount} />
 
 
     <Routes>
