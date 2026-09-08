@@ -6,15 +6,20 @@ function Login() {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [error, setError] = useState("")
+const [success, setSuccess] = useState("")
 
   return (
     <div>
   <h2>Login</h2>
 
   {error && <p>{error}</p>}
+  {success && <p>{success}</p>}
 
   <form onSubmit={(event) => {
   event.preventDefault()
+
+  setError("")
+  
 
 
   if (email === "" || password === "") {
@@ -22,8 +27,8 @@ const [error, setError] = useState("")
   return
 }
 
-console.log("Email:", email)
-console.log("Password:", password)
+setSuccess("Login successful")
+
 }}>
 
 
