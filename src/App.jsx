@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import Cart from './components/Cart'
 import { CartContext } from './context/CartContext'
+import Login from './components/Login'
 
 
 function App() {
@@ -57,29 +58,10 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const cartCount = cart.reduce(
   (total, item) => total + item.quantity,
   0
 )
-
-
-
 
   return (
   <>
@@ -186,7 +168,12 @@ const cartCount = cart.reduce(
 
 <Route path="/cart" element={<Cart />} />
 
+  
 
+  <Route
+  path="/login"
+  element={<Login />}
+/>
 
      <Route
   path="/products/:id"
