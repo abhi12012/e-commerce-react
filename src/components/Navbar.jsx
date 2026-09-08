@@ -19,7 +19,7 @@ function Navbar({ cartCount }) {
   </li>
 
   <li>
-    <a href="#">Cart ({cartCount})</a>
+   <Link to="/cart">Cart ({cartCount})</Link>
   </li>
 </ul>
 

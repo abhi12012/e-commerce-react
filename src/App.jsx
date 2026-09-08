@@ -72,7 +72,15 @@ const addToCart = (product) => {
 
 
 
-
+const increaseQuantity = (productId) => {
+  setCart(
+    cart.map((item) =>
+      item.product.id === productId
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  )
+}
 
 
 
@@ -82,23 +90,6 @@ const addToCart = (product) => {
   return (
   <>
     <Navbar cartCount={cart.length} />
-
-
-    <div>
-  <h2>Cart</h2>
-
- {cart.map((item) => (
-
-
-    <p key={item.product.id}>
-  {item.product.name} × {item.quantity}
-</p>
-
-
-  ))}
-</div>
-
-
 
 
     <Routes>
@@ -197,7 +188,12 @@ const addToCart = (product) => {
 
 <Route
   path="/cart"
-  element={<Cart cart={cart} />}
+  element={
+    <Cart
+      cart={cart}
+      increaseQuantity={increaseQuantity}
+    />
+  }
 />
 
 
