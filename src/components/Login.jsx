@@ -7,6 +7,17 @@ function Login() {
         type="email"
         placeholder="Enter email"
       />
+
+
+      <input
+  type="password"
+  placeholder="Enter password"
+/>
+
+
+<button>
+  Login
+</button>
     </div>
   )
 }
