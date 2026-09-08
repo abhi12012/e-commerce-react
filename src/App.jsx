@@ -20,7 +20,7 @@ const [sort, setSort] = useState("default")
 
 const {
   cart,
-  setCart,
+  
   addToCart,
   increaseQuantity,
   decreaseQuantity,
@@ -184,17 +184,7 @@ const cartCount = cart.reduce(
 
 
 
-<Route
-  path="/cart"
-  element={
-    <Cart
-      cart={cart}
-      increaseQuantity={increaseQuantity}
-      decreaseQuantity={decreaseQuantity}
-      removeFromCart={removeFromCart}
-    />
-  }
-/>
+<Route path="/cart" element={<Cart />} />
 
 
 
