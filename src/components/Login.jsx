@@ -12,7 +12,14 @@ const [password, setPassword] = useState("")
 
   <form onSubmit={(event) => {
   event.preventDefault()
-  console.log("Email:", email)
+
+
+  if (email === "" || password === "") {
+  console.log("Email and password are required")
+  return
+}
+
+console.log("Email:", email)
 console.log("Password:", password)
 }}>
 
