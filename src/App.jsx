@@ -5,8 +5,9 @@ import products from './data/products'
 import ProductCard from './components/ProductCard'
 import ProductDetails from './components/ProductDetails'
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Cart from './components/Cart'
+import { CartContext } from './context/CartContext'
 
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
 const [search, setSearch] = useState("")
 const [category, setCategory] = useState("All")
 const [sort, setSort] = useState("default")
-const [cart, setCart] = useState([])
+
+
+
+const { cart, setCart } = useContext(CartContext)
 
 
 
