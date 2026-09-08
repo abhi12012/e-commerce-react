@@ -5,17 +5,20 @@ import { useState } from 'react'
 function Login() {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const [error, setError] = useState("")
 
   return (
     <div>
   <h2>Login</h2>
+
+  {error && <p>{error}</p>}
 
   <form onSubmit={(event) => {
   event.preventDefault()
 
 
   if (email === "" || password === "") {
-  console.log("Email and password are required")
+  setError("Email and password are required")
   return
 }
 
