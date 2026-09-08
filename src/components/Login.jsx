@@ -1,24 +1,29 @@
 function Login() {
   return (
     <div>
-      <h2>Login</h2>
+  <h2>Login</h2>
 
-      <input
-        type="email"
-        placeholder="Enter email"
-      />
+  <form onSubmit={(event) => {
+  event.preventDefault()
+  console.log("Login form submitted")
+}}>
 
+    
+    <input
+      type="email"
+      placeholder="Enter email"
+    />
 
-      <input
-  type="password"
-  placeholder="Enter password"
-/>
+    <input
+      type="password"
+      placeholder="Enter password"
+    />
 
-
-<button>
-  Login
-</button>
-    </div>
+    <button>
+      Login
+    </button>
+  </form>
+</div>
   )
 }
 
