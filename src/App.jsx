@@ -47,7 +47,27 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
 
 
 const addToCart = (product) => {
-  setCart([...cart, product])
+  const existingProduct = cart.find(
+    (item) => item.product.id === product.id
+  )
+
+  if (existingProduct) {
+    setCart(
+      cart.map((item) =>
+        item.product.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    )
+  } else {
+    setCart([
+      ...cart,
+      {
+        product: product,
+        quantity: 1
+      }
+    ])
+  }
 }
 
 
@@ -67,8 +87,14 @@ const addToCart = (product) => {
     <div>
   <h2>Cart</h2>
 
-  {cart.map((product) => (
-    <p key={product.id}>{product.name}</p>
+ {cart.map((item) => (
+
+
+    <p key={item.product.id}>
+  {item.product.name} × {item.quantity}
+</p>
+
+
   ))}
 </div>
 
