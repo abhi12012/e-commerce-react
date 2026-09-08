@@ -18,7 +18,13 @@ const [sort, setSort] = useState("default")
 
 
 
-const { cart, setCart } = useContext(CartContext)
+const {
+  cart,
+  setCart,
+  addToCart,
+  increaseQuantity,
+  decreaseQuantity
+} = useContext(CartContext)
 
 
 
@@ -50,55 +56,13 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
 })
 
 
-const addToCart = (product) => {
-  const existingProduct = cart.find(
-    (item) => item.product.id === product.id
-  )
-
-  if (existingProduct) {
-    setCart(
-      cart.map((item) =>
-        item.product.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
-    )
-  } else {
-    setCart([
-      ...cart,
-      {
-        product: product,
-        quantity: 1
-      }
-    ])
-  }
-}
-
-
-
-const increaseQuantity = (productId) => {
-  setCart(
-    cart.map((item) =>
-      item.product.id === productId
-        ? { ...item, quantity: item.quantity + 1 }
-        : item
-    )
-  )
-}
 
 
 
 
 
-const decreaseQuantity = (productId) => {
-  setCart(
-    cart.map((item) =>
-      item.product.id === productId && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    )
-  )
-}
+
+
 
 
 
