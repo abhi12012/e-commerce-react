@@ -1,4 +1,4 @@
-function Cart({ cart, increaseQuantity }) {
+function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
   return (
     <div>
       <h2>Cart</h2>
@@ -12,6 +12,18 @@ function Cart({ cart, increaseQuantity }) {
           <button onClick={() => increaseQuantity(item.product.id)}>
   +
 </button>
+
+<button onClick={() => decreaseQuantity(item.product.id)}>
+  −
+</button>
+
+
+
+<button onClick={() => removeFromCart(item.product.id)}>
+  Remove
+</button>
+
+
         </div>
       ))}
     </div>

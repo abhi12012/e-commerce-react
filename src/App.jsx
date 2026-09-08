@@ -86,6 +86,26 @@ const increaseQuantity = (productId) => {
 
 
 
+const decreaseQuantity = (productId) => {
+  setCart(
+    cart.map((item) =>
+      item.product.id === productId && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    )
+  )
+}
+
+
+
+
+const removeFromCart = (productId) => {
+  setCart(
+    cart.filter((item) => item.product.id !== productId)
+  )
+}
+
+
 
   return (
   <>
@@ -186,12 +206,18 @@ const increaseQuantity = (productId) => {
 
       />
 
+
+
+
+
 <Route
   path="/cart"
   element={
     <Cart
       cart={cart}
       increaseQuantity={increaseQuantity}
+      decreaseQuantity={decreaseQuantity}
+      removeFromCart={removeFromCart}
     />
   }
 />
