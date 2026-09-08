@@ -1,4 +1,10 @@
 function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
+
+    const total = cart.reduce(
+  (sum, item) => sum + item.product.price * item.quantity,
+  0
+)
+
   return (
     <div>
       <h2>Cart</h2>
@@ -26,6 +32,9 @@ function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
 
         </div>
       ))}
+
+      <h3>Total: ₹{total}</h3>
+      
     </div>
   )
 }
