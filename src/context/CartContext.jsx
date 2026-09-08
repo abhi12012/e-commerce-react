@@ -58,6 +58,14 @@ const decreaseQuantity = (productId) => {
 
 
 
+const removeFromCart = (productId) => {
+  setCart(
+    cart.filter((item) => item.product.id !== productId)
+  )
+}
+
+
+
   return (
     <CartContext.Provider
   value={{
@@ -65,7 +73,8 @@ const decreaseQuantity = (productId) => {
     setCart,
     addToCart,
     increaseQuantity,
-    decreaseQuantity
+    decreaseQuantity,
+    removeFromCart
   }}
 >
       {children}

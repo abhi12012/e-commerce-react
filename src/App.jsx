@@ -23,9 +23,9 @@ const {
   setCart,
   addToCart,
   increaseQuantity,
-  decreaseQuantity
+  decreaseQuantity,
+  removeFromCart
 } = useContext(CartContext)
-
 
 
 
@@ -67,11 +67,7 @@ const sortedProducts = [...filteredProducts].sort((a, b) => {
 
 
 
-const removeFromCart = (productId) => {
-  setCart(
-    cart.filter((item) => item.product.id !== productId)
-  )
-}
+
 
 
 
