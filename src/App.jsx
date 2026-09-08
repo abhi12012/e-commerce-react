@@ -6,7 +6,7 @@ import ProductCard from './components/ProductCard'
 import ProductDetails from './components/ProductDetails'
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-
+import Cart from './components/Cart'
 
 
 function App() {
@@ -168,6 +168,11 @@ const addToCart = (product) => {
 
 
       />
+
+<Route
+  path="/cart"
+  element={<Cart cart={cart} />}
+/>
 
 
 
