@@ -6,27 +6,40 @@ function Signup() {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [error, setError] = useState("")
+    const [success, setSuccess] = useState("")
 
 
   return (
     <div>
       <h2>Signup</h2>
 
+      <input
+  type="text"
+  placeholder="Enter your name"
+  required
+/>
+
       {error && <p>{error}</p>}
+      {success && <p>{success}</p>}
 
 
      <form onSubmit={(event) => {
   event.preventDefault()
 
-
-  if (name === "") {
+if (name === "") {
   setError("Name is required")
   return
 }
 
-
 if (email === "") {
   setError("Email is required")
+  return
+}
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+if (!emailPattern.test(email)) {
+  setError("Please enter a valid email")
   return
 }
 
@@ -35,12 +48,24 @@ if (password === "") {
   return
 }
 
-  if (password !== confirmPassword) {
+if (password.length < 6) {
+  setError("Password must be at least 6 characters")
+  return
+}
+
+if (confirmPassword === "") {
+  setError("Confirm password is required")
+  return
+}
+
+if (password !== confirmPassword) {
   setError("Passwords do not match")
   return
 }
 
-  console.log("Signup form submitted")
+
+
+setSuccess("Signup successful")
 }}>
 
 
