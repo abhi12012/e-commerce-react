@@ -61,6 +61,7 @@ body {
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
+  padding-inline: 16px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -108,4 +109,36 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+
+@media (max-width: 600px) {
+  #root {
+    padding-inline: 10px;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+  }
+}
+
+
+.product-card {
+  width: 250px;
+  box-sizing: border-box;
 }

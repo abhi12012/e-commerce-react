@@ -1,7 +1,11 @@
 import { useParams } from 'react-router-dom'
 import products from '../data/products'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
 function ProductDetails() {
+  const { addToCart } = useContext(CartContext)
+
     const { id } = useParams()
 
     const selectedProduct = products.find(
@@ -21,7 +25,11 @@ if (!selectedProduct) {
 
       
 
-      <button>Add to Cart</button>
+     <button onClick={() => addToCart(selectedProduct)}>
+  Add to Cart
+</button>
+
+
     </div>
   )
 }
