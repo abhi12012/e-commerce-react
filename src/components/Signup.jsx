@@ -13,10 +13,27 @@ function Signup() {
       <h2>Signup</h2>
 
       {error && <p>{error}</p>}
-      
+
 
      <form onSubmit={(event) => {
   event.preventDefault()
+
+
+  if (name === "") {
+  setError("Name is required")
+  return
+}
+
+
+if (email === "") {
+  setError("Email is required")
+  return
+}
+
+if (password === "") {
+  setError("Password is required")
+  return
+}
 
   if (password !== confirmPassword) {
   setError("Passwords do not match")
