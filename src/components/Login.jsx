@@ -27,13 +27,27 @@ const [success, setSuccess] = useState("")
   return
 }
 
+
+
+if (password.length < 6) {
+  setError("Password must be at least 6 characters")
+  return
+}
+
+
+
+if (!email.includes("@")) {
+  setError("Please enter a valid email")
+  return
+}
+
 setSuccess("Login successful")
 
 }}>
 
 
     <input
-  type="email"
+  type="text"
   placeholder="Enter email"
   value={email}
   onChange={(event) => setEmail(event.target.value)}
