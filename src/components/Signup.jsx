@@ -4,11 +4,28 @@ function Signup() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [error, setError] = useState("")
 
 
   return (
     <div>
       <h2>Signup</h2>
+
+      {error && <p>{error}</p>}
+      
+
+     <form onSubmit={(event) => {
+  event.preventDefault()
+
+  if (password !== confirmPassword) {
+  setError("Passwords do not match")
+  return
+}
+
+  console.log("Signup form submitted")
+}}>
+
 
       <input
   type="text"
@@ -37,7 +54,17 @@ function Signup() {
 <input
   type="password"
   placeholder="Confirm password"
+  value={confirmPassword}
+  onChange={(event) => setConfirmPassword(event.target.value)}
 />
+
+
+<button>
+  Signup
+</button>
+
+
+</form>
 
     </div>
   )
