@@ -23,8 +23,18 @@ function Signup() {
       {success && <p>{success}</p>}
 
 
+
+
+
+
+
      <form onSubmit={(event) => {
   event.preventDefault()
+
+  const savedUser = localStorage.getItem("user")
+ const savedUserData = JSON.parse(savedUser)
+ console.log(savedUserData)
+  
 
   setError("")
 setSuccess("")
@@ -65,6 +75,16 @@ if (password !== confirmPassword) {
   setError("Passwords do not match")
   return
 }
+
+
+
+const user = {
+  name,
+  email,
+  password
+}
+
+localStorage.setItem("user", JSON.stringify(user))
 
 
 

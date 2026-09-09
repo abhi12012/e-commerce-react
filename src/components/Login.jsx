@@ -18,6 +18,9 @@ const [success, setSuccess] = useState("")
   <form onSubmit={(event) => {
   event.preventDefault()
 
+  const savedUser = localStorage.getItem("user")
+const savedUserData = JSON.parse(savedUser)
+
   setError("")
   setSuccess("")
 
@@ -49,7 +52,22 @@ if (!emailPattern.test(email)) {
   return
 }
 
+
+
+if (email !== savedUserData.email) {
+  setError("Email does not match")
+  return
+}
+
+
+if (password !== savedUserData.password) {
+  setError("Password is incorrect")
+  return
+}
+
 setSuccess("Login successful")
+
+
 
 }}>
 
