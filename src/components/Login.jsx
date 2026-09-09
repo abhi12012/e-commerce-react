@@ -22,10 +22,16 @@ const [success, setSuccess] = useState("")
   setSuccess("")
 
 
-  if (email === "" || password === "") {
-  setError("Email and password are required")
+ if (email === "") {
+  setError("Email is required")
   return
 }
+
+if (password === "") {
+  setError("Password is required")
+  return
+}
+
 
 
 
