@@ -19,7 +19,7 @@ const [success, setSuccess] = useState("")
   event.preventDefault()
 
   setError("")
-  
+  setSuccess("")
 
 
   if (email === "" || password === "") {
@@ -36,7 +36,9 @@ if (password.length < 6) {
 
 
 
-if (!email.includes("@")) {
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+if (!emailPattern.test(email)) {
   setError("Please enter a valid email")
   return
 }
