@@ -9,6 +9,7 @@ import { useState, useContext } from 'react'
 import Cart from './components/Cart'
 import { CartContext } from './context/CartContext'
 import Login from './components/Login'
+import Signup from './components/Signup'
 
 
 function App() {
@@ -174,6 +175,14 @@ const cartCount = cart.reduce(
   path="/login"
   element={<Login />}
 />
+
+
+<Route
+  path="/signup"
+  element={<Signup />}
+/>
+
+
 
      <Route
   path="/products/:id"
