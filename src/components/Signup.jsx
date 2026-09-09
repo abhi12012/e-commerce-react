@@ -26,6 +26,9 @@ function Signup() {
      <form onSubmit={(event) => {
   event.preventDefault()
 
+  setError("")
+setSuccess("")
+
 if (name === "") {
   setError("Name is required")
   return
