@@ -8,10 +8,9 @@ function Navbar({ cartCount }) {
       <h2>E-commerce</h2>
 
 
-
 <ul>
   <li>
-   <Link to="/">Home</Link>
+    <Link to="/">Home</Link>
   </li>
 
   <li>
@@ -19,7 +18,15 @@ function Navbar({ cartCount }) {
   </li>
 
   <li>
-   <Link to="/cart">Cart ({cartCount})</Link>
+    <Link to="/cart">Cart ({cartCount})</Link>
+  </li>
+
+  <li>
+    <Link to="/login">Login</Link>
+  </li>
+
+  <li>
+    <Link to="/signup">Signup</Link>
   </li>
 </ul>
 
